@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Goldberg - Paid Survey Expert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --background: #f8f9fa;
+            --primary: #1a73e8;
+            --text: #202124;
+            --card-bg: #ffffff;
+            --light-text: #5f6368;
+            --border: #dadce0;
+        }
+        
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Container for centering content */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-weight: 400;
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #0d62d9;
+        }
+        
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        /* Countries Section */
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .country-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .country-flag {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Why Choose Me Section */
+        .benefits-list {
+            max-width: 700px;
+            margin: 40px auto 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .benefit-icon {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        /* Call to Action Section */
+        .cta-box {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-box h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .cta-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-box .btn {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        .cta-box .btn:hover {
+            background-color: #f0f0f0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--card-bg);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        
+        .copyright {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .services-grid, .countries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .cta-box {
+                padding: 40px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .service-card, .country-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Joe Goldberg</h1>
+            <p class="hero-tagline">Helping users succeed in USA, UK, Canada & Australia paid surveys</p>
+            <a href="#contact" class="btn">Get Survey Help</a>
+        </div>
+    </section>
+    
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I'm Joe Goldberg, a professional Paid Survey Expert with years of experience helping users successfully access and complete surveys in the USA, UK, Canada, and Australia.</p>
+                <p>I focus on quality profiles, correct targeting, and long-term survey stability.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" style="background-color: #f0f2f5;">
+        <div class="container">
+            <h2>My Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Paid Survey Setup</h3>
+                    <p>Professional setup for maximum survey availability and approval rate.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Profile Optimization</h3>
+                    <p>Optimize your survey profiles to match high-paying survey requirements.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🌍</div>
+                    <h3>Country-Specific Survey Support</h3>
+                    <p>Tailored guidance for USA, UK, Canada, and Australia survey platforms.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">✅</div>
+                    <h3>Approval & Stability Guidance</h3>
+                    <p>Expert strategies to maintain consistent survey approvals and earnings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Countries Section -->
+    <section id="countries">
+        <div class="container">
+            <h2>Countries I Support</h2>
+            <div class="countries-grid">
+                <div class="country-card">
+                    <div class="country-flag">🇺🇸</div>
+                    <h3>USA Surveys</h3>
+                    <p>Access the highest-paying US survey panels with proper targeting.</p>
+                </div>
+                
+                <div class="country-card">
+                    <div class="country-flag">🇬🇧</div>
+                    <h3>UK Surveys</h3>
+                    <p>Optimized approach for UK-based survey platforms and market research.</p>
+                </div>
+                
+                <div class="country-card">
+                    <div class="country-flag">🇨🇦</div>
+                    <h3>Canada Surveys</h3>
+                    <p>Canadian survey expertise with region-specific profile optimization.</p>
+                </div>
+                
+                <div class="country-card">
+                    <div class="country-flag">🇦🇺</div>
+                    <h3>Australia Surveys</h3>
+                    <p>Targeted guidance for Australian survey platforms and research studies.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-style: italic;">
+                Residential-level guidance with realistic profiles and best practices.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Why Choose Me Section -->
+    <section id="why" style="background-color: #f0f2f5;">
+        <div class="container">
+            <h2>Why Choose Me</h2>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h3>High-quality profile guidance</h3>
+                        <p>Professional optimization for maximum survey matching and approvals.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h3>Realistic & human-based setup</h3>
+                        <p>Authentic profile development that complies with survey platform policies.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h3>Long-term survey access focus</h3>
+                        <p>Strategies designed for consistent survey availability over time.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h3>Clean, ethical, and stable methods</h3>
+                        <p>Compliant approaches that ensure account security and longevity.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h3>Trusted by global users</h3>
+                        <p>Proven track record with clients in USA, UK, Canada, and Australia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Need help with paid surveys?</h2>
+                <p>Let's get you started the right way with professional setup and guidance for USA, UK, Canada, and Australia survey platforms.</p>
+                <a href="#" class="btn">Contact Me</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 Joe Goldberg<br>Paid Survey Expert</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Mobile menu toggle (simplified for single page)
+        // Make CTA button work
+        document.querySelector('#contact .btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert("Thank you for your interest! Please email joe@surveysuccess.com for consultation.");
+        });
+        
+        document.querySelector('.hero .btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#contact').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
