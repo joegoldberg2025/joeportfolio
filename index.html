@@ -1,1036 +1,664 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joe Goldberg | Paid Survey Growth Specialist</title>
+    <title>Joe Goldberg - পেইড সার্ভে বিশেষজ্ঞ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables for Theming */
-        :root {
-            /* Light Theme */
-            --bg-primary: #f5f7fb;
-            --bg-secondary: #ffffff;
-            --text-primary: #111827;
-            --text-secondary: #4b5563;
-            --accent-primary: #2563eb;
-            --accent-secondary: #3b82f6;
-            --border-color: #e5e7eb;
-            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            --card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --header-height: 70px;
-        }
-        
-        [data-theme="dark"] {
-            --bg-primary: #111827;
-            --bg-secondary: #1f2937;
-            --text-primary: #f9fafb;
-            --text-secondary: #d1d5db;
-            --accent-primary: #3b82f6;
-            --accent-secondary: #60a5fa;
-            --border-color: #374151;
-            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            --card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.3);
-            --glass-bg: rgba(31, 41, 55, 0.7);
-        }
-        
-        /* CSS Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
         }
         
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-            width: 100%;
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
+            background-color: #f9f9f9;
+            color: #333;
             line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s;
-            width: 100%;
-            overflow-x: hidden;
-            position: relative;
         }
         
-        /* Container */
         .container {
-            width: 100%;
-            max-width: 1140px;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 16px;
+            padding: 0 15px;
         }
         
-        /* Header */
+        /* Header Styles */
         header {
-            position: fixed;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--bg-secondary);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             z-index: 1000;
-            transition: transform 0.3s;
-            height: var(--header-height);
-            border-bottom: 1px solid var(--border-color);
         }
         
-        header.hidden {
-            transform: translateY(-100%);
-        }
-        
-        .header-container {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100%;
         }
         
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--accent-primary);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent-primary);
-        }
-        
-        .theme-toggle {
-            background: none;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
             display: flex;
             align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s;
         }
         
-        .theme-toggle:hover {
-            background-color: var(--bg-primary);
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
         
         /* Hero Section */
         .hero {
-            padding: 120px 0 80px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: var(--header-height);
-        }
-        
-        .hero-content h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--accent-primary);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero-description {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-        
-        .trust-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        
-        .stat-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: var(--card-shadow);
-        }
-        
-        .stat-number {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent-primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-        
-        /* How I Help Section */
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .process-flow {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .process-step {
-            background: var(--bg-secondary);
-            border-radius: 18px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid var(--border-color);
-        }
-        
-        .process-step:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow-hover);
-        }
-        
-        .step-number {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: var(--accent-primary);
+            padding: 5rem 0;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
-            border-radius: 50%;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        /* About Section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            font-size: 2.5rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            margin: 0 auto 1.5rem;
+            gap: 3rem;
         }
         
-        .process-note {
-            text-align: center;
-            font-style: italic;
-            color: var(--text-secondary);
-            padding: 1rem;
-            border-top: 1px solid var(--border-color);
-            max-width: 600px;
-            margin: 0 auto;
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
         
         /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+        
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         
         .service-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 18px;
-            padding: 2.5rem 2rem;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
         }
         
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-10px);
         }
         
         .service-icon {
             font-size: 2.5rem;
-            color: var(--accent-primary);
+            color: var(--secondary);
             margin-bottom: 1.5rem;
         }
         
-        .service-title {
-            font-size: 1.4rem;
-            font-weight: 600;
+        .service-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: var(--primary);
         }
         
-        /* Countries Section */
-        .countries-grid {
+        /* Survey Platforms */
+        .platforms-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
         
-        .country-card {
-            background: var(--bg-secondary);
-            border-radius: 18px;
+        .platform-card {
+            background-color: white;
+            border-radius: 10px;
             padding: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border-color);
-        }
-        
-        .country-flag {
-            font-size: 3rem;
-        }
-        
-        .country-details h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Method Works Section */
-        .method-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .checklist {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .checklist-item {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-        
-        .checklist-icon {
-            color: #10b981;
-            font-size: 1.3rem;
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-        
-        /* Profile Quality Score */
-        .quality-score {
-            background: var(--bg-secondary);
-            border-radius: 18px;
-            padding: 3rem;
+            box-shadow: var(--shadow);
             text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border-color);
+            border-top: 5px solid var(--secondary);
         }
         
-        .score-bar {
-            width: 100%;
-            height: 20px;
-            background-color: var(--bg-primary);
-            border-radius: 10px;
-            margin: 2rem 0;
-            overflow: hidden;
+        .platform-logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
         }
         
-        .score-fill {
-            height: 100%;
-            width: 85%;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-            border-radius: 10px;
+        .platform-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .platform-features {
+            list-style: none;
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+        
+        .platform-features li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
             position: relative;
         }
         
-        .score-fill::after {
-            content: '85%';
+        .platform-features li:before {
+            content: '✓';
             position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary);
             color: white;
-            font-weight: 600;
-            font-size: 0.8rem;
         }
         
-        /* FAQ Section */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .contact .section-title {
+            color: white;
         }
         
-        .faq-item {
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 1rem;
-        }
-        
-        .faq-question {
-            padding: 1.5rem 0;
+        .contact-content {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 600;
+            flex-wrap: wrap;
+            gap: 3rem;
         }
         
-        .faq-answer {
-            padding: 0 0 1.5rem;
-            color: var(--text-secondary);
-            display: none;
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
         }
         
-        .faq-item.active .faq-answer {
-            display: block;
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
         }
         
-        .faq-icon {
-            transition: transform 0.3s;
-        }
-        
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            color: white;
-            border-radius: 18px;
-            padding: 4rem;
-            text-align: center;
-            margin: 4rem auto;
-        }
-        
-        .cta-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .cta-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .cta-buttons {
+        .social-links {
             display: flex;
             gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
             justify-content: center;
-        }
-        
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-primary {
-            background-color: white;
-            color: var(--accent-primary);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
             color: white;
-            border: 2px solid white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: background-color 0.3s;
         }
         
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        .social-link:hover {
+            background-color: var(--accent);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .contact-form button {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-form button:hover {
+            background-color: #c0392b;
         }
         
         /* Footer */
         footer {
-            background-color: var(--bg-secondary);
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        /* Contact Button */
-        .contact-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 100;
-        }
-        
-        .contact-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--accent-primary);
+            background-color: var(--dark);
             color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            padding: 2rem 0;
         }
         
-        .contact-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-        }
-        
-        /* Responsive */
+        /* Responsive Styles */
         @media (max-width: 992px) {
-            .hero {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+            .about-content {
+                flex-direction: column;
             }
             
-            .process-flow {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .method-section {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+            .hero h1 {
+                font-size: 2.5rem;
             }
         }
         
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: var(--shadow);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 0.8rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
             }
             
             .section-title {
                 font-size: 2rem;
             }
-            
-            .process-flow {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-section {
-                padding: 3rem 1.5rem;
-            }
-            
-            .cta-title {
-                font-size: 2rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
         }
         
-        /* Section Spacing */
-        section {
-            padding: 5rem 0;
+        @media (max-width: 576px) {
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
         }
-        
-        /* Utility Classes */
-        .text-center {
-            text-align: center;
-        }
-        
-        .mb-1 { margin-bottom: 1rem; }
-        .mb-2 { margin-bottom: 2rem; }
-        .mb-3 { margin-bottom: 3rem; }
-        .mb-4 { margin-bottom: 4rem; }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="container header-container">
-            <div class="logo">Joe Goldberg</div>
-            <nav class="nav-links">
-                <a href="#how">How I Help</a>
-                <a href="#services">Services</a>
-                <a href="#countries">Countries</a>
-                <a href="#method">Method</a>
-                <a href="#faq">FAQ</a>
-            </nav>
-            <button class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </button>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    Joe Goldberg
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#home">হোম</a></li>
+                        <li><a href="#about">আমার সম্পর্কে</a></li>
+                        <li><a href="#services">সার্ভিস</a></li>
+                        <li><a href="#platforms">সার্ভে প্ল্যাটফর্ম</a></li>
+                        <li><a href="#contact">যোগাযোগ</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
-    
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content">
-                <h1>Joe Goldberg</h1>
-                <div class="hero-subtitle">Paid Survey Growth Specialist</div>
-                <p class="hero-description">
-                    Optimizing paid survey access for USA, UK, Canada & Australia
-                    with long-term stability and human-quality profiles.
-                </p>
-                <div class="trust-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">4+</div>
-                        <div class="stat-label">Supported Countries</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">Profile</div>
-                        <div class="stat-label">First Approach</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">Stability</div>
-                        <div class="stat-label">Focused</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">Human</div>
-                        <div class="stat-label">Behavior Modeling</div>
-                    </div>
-                </div>
+            <h1>Joe Goldberg</h1>
+            <p><span class="highlight">পেইড সার্ভে বিশেষজ্ঞ</span> - অনলাইন সার্ভের মাধ্যমে আয় করুন সহজেই</p>
+            <p>HeyPiggy, Survey Junkie, Swagbucks সহ অসংখ্য প্ল্যাটফর্ম থেকে মাসে অতিরিক্ত আয়ের সুযোগ। আমি আপনাকে গাইড করব কিভাবে আপনি বিশ্বস্ত সার্ভে প্ল্যাটফর্ম থেকে অর্থ উপার্জন করতে পারেন।</p>
+            <div class="social-links" style="justify-content: center;">
+                <a href="https://m.me/joegoldberg2.0" class="social-link" target="_blank">
+                    <i class="fab fa-facebook-messenger"></i>
+                </a>
+                <a href="https://t.me/joegoldberg2025" class="social-link" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
             </div>
-            <div class="hero-visual">
-                <!-- Visual content would go here -->
-                <div style="background: var(--bg-secondary); height: 300px; border-radius: 18px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-color);">
-                    <div style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 5rem; margin-bottom: 1rem;">📊</div>
-                        <h3>Survey Access Engineered</h3>
-                    </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">আমার সম্পর্কে</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Joe Goldberg">
+                </div>
+                <div class="about-text">
+                    <h3>Joe Goldberg - পেইড সার্ভে বিশেষজ্ঞ</h3>
+                    <p>আমি Joe Goldberg, পাঁচ বছরেরও বেশি সময় ধরে পেইড সার্ভে শিল্পে সক্রিয় আছি। আমি বিভিন্ন সার্ভে প্ল্যাটফর্ম যেমন HeyPiggy, Survey Junkie, Swagbucks, এবং আরো অনেকগুলিতে কাজ করে এসেছি এবং এইসব প্ল্যাটফর্ম থেকে মাসে $500-এর বেশি আয় করি।</p>
+                    <p>আমার অভিজ্ঞতা থেকে আমি শিখেছি কিভাবে সঠিক প্ল্যাটফর্ম নির্বাচন করতে হয়, কিভাবে বেশি অর্থদায়ক সার্ভে খুঁজে বের করতে হয় এবং কিভাবে সময় বাঁচিয়ে অধিক আয় করা যায়। এখন আমি আমার জ্ঞান অন্যদের সাথে শেয়ার করি যাতে তারাও অনলাইন সার্ভে থেকে আয় করতে পারে।</p>
+                    <p>আপনিও চাইলে শুরু করতে পারেন। শুধু সঠিক গাইডলাইন প্রয়োজন। আমার সাথে যুক্ত থাকুন এবং পেইড সার্ভে জগতে আপনার যাত্রা শুরু করুন।</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- How I Help Section -->
-    <section id="how" style="background-color: var(--bg-secondary);">
-        <div class="container">
-            <h2 class="section-title">How I Actually Help</h2>
-            <p class="section-subtitle">Most sites say what — this says how.</p>
-            
-            <div class="process-flow">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Profile Analysis</h3>
-                    <p>Deep analysis of your current survey profiles and platforms</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Survey Target Matching</h3>
-                    <p>Align your profile with high-value survey opportunities</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Behavior Optimization</h3>
-                    <p>Refine your survey-taking patterns for maximum approval</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Long-Term Stability Strategy</h3>
-                    <p>Implement practices for consistent, ongoing survey access</p>
-                </div>
-            </div>
-            
-            <p class="process-note">
-                No automation. No shortcuts. Only realistic human behavior.
-            </p>
-        </div>
-    </section>
-    
+
     <!-- Services Section -->
-    <section id="services">
+    <section class="section services" id="services">
         <div class="container">
-            <h2 class="section-title">Services</h2>
-            <p class="section-subtitle mb-4">Premium survey optimization services</p>
-            
+            <h2 class="section-title">আমার সার্ভিস</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3 class="service-title">Survey Profile Engineering</h3>
-                    <p>Build profiles that survey platforms recognize as high-quality respondents</p>
+                    <div class="service-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>সার্ভে ট্রেনিং</h3>
+                    <p>নতুনদের জন্য সম্পূর্ণ গাইডলাইন - কিভাবে শুরু করতে হবে, কোন প্ল্যাটফর্মগুলো বিশ্বস্ত, কিভাবে বেশি আয় করা যায়, এবং সাধারণ ভুলগুলো এড়ানো।</p>
                 </div>
-                
                 <div class="service-card">
-                    <div class="service-icon">🌍</div>
-                    <h3 class="service-title">Country-Specific Survey Access</h3>
-                    <p>Tailored strategies for USA, UK, Canada, and Australia survey ecosystems</p>
+                    <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>সার্ভে ইনসাইট</h3>
+                    <p>বিভিন্ন প্ল্যাটফর্মের বিশদ বিশ্লেষণ, কোন প্ল্যাটফর্ম কত টাকা দেয়, কত সময় ব্যয় করতে হয়, এবং কোন প্ল্যাটফর্মে আপনার জন্য ভাল সুযোগ আছে।</p>
                 </div>
-                
                 <div class="service-card">
-                    <div class="service-icon">📈</div>
-                    <h3 class="service-title">Approval Rate Optimization</h3>
-                    <p>Increase your survey acceptance rate with targeted response patterns</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🤝</div>
-                    <h3 class="service-title">Platform Compatibility Guidance</h3>
-                    <p>Navigate multiple survey platforms with unified, effective strategies</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🛡️</div>
-                    <h3 class="service-title">Long-Term Account Safety Strategy</h3>
-                    <p>Protect your survey accounts from flags and maintain access longevity</p>
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>ব্যক্তিগত কোচিং</h3>
+                    <p>এক-এক কোচিং সেশন যেখানে আমি আপনার সার্ভে প্রোফাইল রিভিউ করব, উন্নতির উপায় বলব এবং সর্বোচ্চ আয় করার কৌশল শেখাব।</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Countries Section -->
-    <section id="countries" style="background-color: var(--bg-secondary);">
+
+    <!-- Survey Platforms Section -->
+    <section class="section" id="platforms">
         <div class="container">
-            <h2 class="section-title">Country Expertise</h2>
-            <p class="section-subtitle mb-4">Each country requires different behavior logic — I handle that.</p>
-            
-            <div class="countries-grid">
-                <div class="country-card">
-                    <div class="country-flag">🇺🇸</div>
-                    <div class="country-details">
-                        <h3>USA</h3>
-                        <p>High-value panels & demographic targeting</p>
+            <h2 class="section-title">সার্ভে প্ল্যাটফর্ম</h2>
+            <div class="platforms-grid">
+                <div class="platform-card">
+                    <div class="platform-logo">
+                        <i class="fas fa-piggy-bank"></i>
                     </div>
+                    <h3>HeyPiggy</h3>
+                    <p>সর্বোচ্চ অর্থদায়ক সার্ভে প্ল্যাটফর্মগুলির মধ্যে একটি। নতুন সদস্যদের জন্য বোনাস এবং নিয়মিত সার্ভে পাওয়া যায়।</p>
+                    <ul class="platform-features">
+                        <li>সাইনআপ বোনাস: $5</li>
+                        <li>গড় সার্ভে আয়: $1-$5</li>
+                        <li>পেমেন্ট মেথড: পেপ্যাল, গিফট কার্ড</li>
+                        <li>বিশেষ সুবিধা: দ্রুত পেমেন্ট</li>
+                    </ul>
                 </div>
-                
-                <div class="country-card">
-                    <div class="country-flag">🇬🇧</div>
-                    <div class="country-details">
-                        <h3>UK</h3>
-                        <p>Clean profile alignment with market research standards</p>
+                <div class="platform-card">
+                    <div class="platform-logo">
+                        <i class="fas fa-search-dollar"></i>
                     </div>
+                    <h3>Survey Junkie</h3>
+                    <p>বিশ্বের সবচেয়ে জনপ্রিয় সার্ভে প্ল্যাটফর্ম। সহজ ইন্টারফেস এবং নিয়মিত সার্ভে পাওয়া যায়।</p>
+                    <ul class="platform-features">
+                        <li>সাইনআপ বোনাস: 100 পয়েন্ট</li>
+                        <li>গড় সার্ভে আয়: $0.5-$3</li>
+                        <li>পেমেন্ট মেথড: পেপ্যাল, ভেনমো</li>
+                        <li>বিশেষ সুবিধা: সার্ভে সহজলভ্য</li>
+                    </ul>
                 </div>
-                
-                <div class="country-card">
-                    <div class="country-flag">🇨🇦</div>
-                    <div class="country-details">
-                        <h3>Canada</h3>
-                        <p>Stability-first targeting for consistent survey flow</p>
+                <div class="platform-card">
+                    <div class="platform-logo">
+                        <i class="fas fa-coins"></i>
                     </div>
+                    <h3>Swagbucks</h3>
+                    <p>সার্ভে ছাড়াও শপিং, ভিডিও দেখে এবং গেম খেলে আয়ের সুযোগ। বহুমুখী আয়ের প্ল্যাটফর্ম।</p>
+                    <ul class="platform-features">
+                        <li>সাইনআপ বোনাস: 300 SB পয়েন্ট</li>
+                        <li>গড় সার্ভে আয়: $0.5-$2</li>
+                        <li>পেমেন্ট মেথড: গিফট কার্ড, পেপ্যাল</li>
+                        <li>বিশেষ সুবিধা: একাধিক আয়ের উপায়</li>
+                    </ul>
                 </div>
-                
-                <div class="country-card">
-                    <div class="country-flag">🇦🇺</div>
-                    <div class="country-details">
-                        <h3>Australia</h3>
-                        <p>Survey consistency focus with regional optimization</p>
+                <div class="platform-card">
+                    <div class="platform-logo">
+                        <i class="fas fa-star"></i>
                     </div>
+                    <h3>অন্যান্য প্ল্যাটফর্ম</h3>
+                    <p>InboxDollars, PrizeRebel, MyPoints, Vindale Research সহ আরো অনেক বিশ্বস্ত প্ল্যাটফর্ম সম্পর্কে গাইডেন্স।</p>
+                    <ul class="platform-features">
+                        <li>বিভিন্ন পেমেন্ট অপশন</li>
+                        <li>বিভিন্ন ধরনের সার্ভে</li>
+                        <li>দেশভিত্তিক প্ল্যাটফর্ম সুপারিশ</li>
+                        <li>সবচেয়ে লাভজনক প্ল্যাটফর্ম সিলেকশন</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Method Works Section -->
-    <section id="method">
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
         <div class="container">
-            <div class="method-section">
-                <div>
-                    <h2 class="section-title text-left">Why My Method Works</h2>
-                    <p class="mb-3">This separates you from scammers instantly. I focus on ethical, sustainable survey strategies that prioritize long-term access over short-term gains.</p>
-                    <p>Unlike automated or fraudulent approaches, my methodology respects survey platform guidelines while maximizing your legitimate earning potential.</p>
-                </div>
-                
-                <div class="checklist">
-                    <div class="checklist-item">
-                        <div class="checklist-icon">✓</div>
-                        <div>
-                            <h4>Realistic personal data logic</h4>
-                            <p>Profiles that make sense to survey algorithms</p>
-                        </div>
-                    </div>
+            <h2 class="section-title">যোগাযোগ করুন</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem;">আমার সাথে যুক্ত থাকুন</h3>
+                    <p>পেইড সার্ভে সম্পর্কে আরও জানতে এবং আয় বাড়ানোর কৌশল শিখতে আমার সাথে যোগাযোগ করুন। আমি আপনাকে সঠিক গাইডলাইন দেব।</p>
+                    <p><i class="fas fa-user" style="margin-right: 10px;"></i> Facebook: joegoldberg2.0</p>
+                    <p><i class="fab fa-telegram" style="margin-right: 10px;"></i> Telegram: @joegoldberg2025</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> Email: joe.surveyexpert@example.com</p>
                     
-                    <div class="checklist-item">
-                        <div class="checklist-icon">✓</div>
-                        <div>
-                            <h4>Device & environment awareness</h4>
-                            <p>Proper technical setup for survey compatibility</p>
-                        </div>
+                    <div class="social-links">
+                        <a href="https://m.me/joegoldberg2.0" class="social-link" target="_blank" title="Messenger">
+                            <i class="fab fa-facebook-messenger"></i>
+                        </a>
+                        <a href="https://t.me/joegoldberg2025" class="social-link" target="_blank" title="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
-                    
-                    <div class="checklist-item">
-                        <div class="checklist-icon">✓</div>
-                        <div>
-                            <h4>Survey pattern analysis</h4>
-                            <p>Understanding what survey platforms look for</p>
-                        </div>
-                    </div>
-                    
-                    <div class="checklist-item">
-                        <div class="checklist-icon">✓</div>
-                        <div>
-                            <h4>Consistency over time</h4>
-                            <p>Building survey history that platforms trust</p>
-                        </div>
-                    </div>
-                    
-                    <div class="checklist-item">
-                        <div class="checklist-icon">✓</div>
-                        <div>
-                            <h4>Ethical, non-abusive strategy</h4>
-                            <p>Methods that won't get your accounts flagged</p>
-                        </div>
-                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem;">দ্রুত বার্তা পাঠান</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="আপনার নাম" required>
+                        <input type="email" placeholder="আপনার ইমেইল" required>
+                        <input type="text" placeholder="বিষয়" required>
+                        <textarea rows="5" placeholder="আপনার বার্তা" required></textarea>
+                        <button type="submit">বার্তা পাঠান</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Profile Quality Score -->
-    <section style="background-color: var(--bg-secondary);">
-        <div class="container">
-            <div class="quality-score">
-                <h2 class="section-title">Profile Quality Level</h2>
-                <p>Optimized profiles receive better survey flow and fewer disqualifications.</p>
-                
-                <div class="score-bar">
-                    <div class="score-fill"></div>
-                </div>
-                
-                <p><small>This is informational — represents typical optimization results for clients following the methodology.</small></p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- FAQ Section -->
-    <section id="faq">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle mb-4">Clear answers about survey optimization</p>
-            
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Is this safe for long-term use?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes. My methods are designed for long-term sustainability, not quick fixes that get accounts flagged. I focus on realistic behavior patterns that survey platforms recognize as legitimate.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you guarantee surveys?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>I guarantee optimized access and improved approval rates, but no one can guarantee specific surveys as platforms control distribution. My focus is maximizing your eligibility and opportunities.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do profiles look real to survey platforms?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely. Profile realism is the cornerstone of my approach. I engineer profiles that align with how actual survey respondents would appear to platform algorithms.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Which countries work best?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>The USA typically has the highest volume, but UK, Canada, and Australia all offer excellent opportunities with the right approach. I optimize strategies for each country's specific survey ecosystem.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Is automation used?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>No automation. Survey platforms actively detect and penalize automation. My methodology is based on strategic human behavior patterns, not bots or scripts.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section>
-        <div class="container">
-            <div class="cta-section">
-                <h2 class="cta-title">If surveys matter to you, setup matters more.</h2>
-                <p class="cta-subtitle">Get professional survey optimization that focuses on stability and long-term access.</p>
-                
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">Start Survey Optimization</a>
-                    <a href="#" class="btn btn-secondary">Ask a Question</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <h2 class="mb-2">Joe Goldberg</h2>
-                <p class="mb-2">Paid Survey Growth Specialist</p>
-                <p>Focused on quality, realism, and stability.</p>
-                <p class="mb-3">© 2026 Joe Goldberg. All rights reserved.</p>
+            <p>&copy; ২০২৫ Joe Goldberg - পেইড সার্ভে বিশেষজ্ঞ। সর্বস্বত্ব সংরক্ষিত।</p>
+            <p style="margin-top: 1rem;">Facebook: joegoldberg2.0 | Telegram: @joegoldberg2025</p>
+            <div class="social-links" style="justify-content: center; margin-top: 1.5rem;">
+                <a href="https://m.me/joegoldberg2.0" class="social-link" target="_blank">
+                    <i class="fab fa-facebook-messenger"></i>
+                </a>
+                <a href="https://t.me/joegoldberg2025" class="social-link" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
             </div>
         </div>
     </footer>
-    
-    <!-- Contact Button -->
-    <div class="contact-float">
-        <a href="https://wa.me/1234567890" class="contact-btn" target="_blank">
-            <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
-        </a>
-    </div>
 
     <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = themeToggle.querySelector('i');
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
         
-        // Check for saved theme or prefer-color-scheme
-        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-        const currentTheme = localStorage.getItem('theme');
-        
-        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
-            document.body.setAttribute('data-theme', 'dark');
-            themeIcon.className = 'fas fa-sun';
-        } else {
-            document.body.setAttribute('data-theme', 'light');
-            themeIcon.className = 'fas fa-moon';
-        }
-        
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.body.getAttribute('data-theme');
-            
-            if (currentTheme === 'light') {
-                document.body.setAttribute('data-theme', 'dark');
-                themeIcon.className = 'fas fa-sun';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.body.setAttribute('data-theme', 'light');
-                themeIcon.className = 'fas fa-moon';
-                localStorage.setItem('theme', 'light');
-            }
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
         });
         
-        // Sticky Header Hide/Show
-        let lastScrollTop = 0;
-        const header = document.getElementById('header');
-        
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Scrolling down
-                header.classList.add('hidden');
-            } else {
-                // Scrolling up
-                header.classList.remove('hidden');
-            }
-            
-            lastScrollTop = scrollTop;
-        });
-        
-        // FAQ Accordion
-        const faqItems = document.querySelectorAll('.faq-item');
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            
-            question.addEventListener('click', () => {
-                // Close other items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item && otherItem.classList.contains('active')) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-                
-                // Toggle current item
-                item.classList.toggle('active');
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
             });
         });
         
-        // Smooth scroll for navigation links
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('আপনার বার্তা সফলভাবে পাঠানো হয়েছে! আমি শীঘ্রই আপনার সাথে যোগাযোগ করব।');
+            contactForm.reset();
+        });
+        
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+                if(targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerHeight = document.getElementById('header').offsetHeight;
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                    
+                if(targetElement) {
                     window.scrollTo({
-                        top: targetPosition,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
             });
-        });
-        
-        // Contact button actions
-        document.querySelector('.btn-primary').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert("Survey optimization consultation started. You'll be redirected to the setup form.");
-            // In a real implementation, this would link to a contact form or booking system
-        });
-        
-        document.querySelector('.btn-secondary').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert("Please contact via WhatsApp for questions or email joe@surveygrowth.com");
-        });
-        
-        // Initialize with header visible
-        window.addEventListener('load', () => {
-            header.classList.remove('hidden');
         });
     </script>
 </body>
